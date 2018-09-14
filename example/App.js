@@ -2,7 +2,7 @@ import React from "react";
 import { Alert, Button, StyleSheet, Text, View } from "react-native";
 import TrelloLogin from "react-native-trello-login";
 
-const TRELLO_API_KEY = "";
+const TRELLO_API_KEY = "YOU_TRELLO_API_KEY";
 
 export default class App extends React.Component {
   state = {
@@ -35,7 +35,7 @@ export default class App extends React.Component {
         )}
         {!trelloAuthToken && (
           <TrelloLogin
-            applicationName={"React Native Trello Login Example"}
+            applicationName="React Native Trello Login Example"
             debugEnabled={true}
             onLoginSuccess={this.handleLoginSuccess}
             onLoginFailure={this.handleLoginFailure}
@@ -50,8 +50,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#E6E6E6",
-    paddingTop: 20
+    backgroundColor: "#fff"
   },
   loggedInContainer: {
     flex: 1,
