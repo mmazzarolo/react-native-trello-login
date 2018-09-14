@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://api.trello.com/1/client.js"></script>
+</head>
+
+<body>
+  <script>
+    var sendToReactNative = function (data) {
+      setTimeout(function () {
+        window.postMessage(JSON.stringify(data), "*");
+      }, 0);
+    };
+
+    var authorize = function (trelloApiKey, applicationName) {
+      window.Trello.setKey(trelloApiKey);
+      window.Trello.authorize({
+        type: 'redirect',
+        persist: true,
+        interactive: true,
+        name: applicationName,
+        scope: {
+          read: 'true',
+          write: 'true'
+        },
+        expiration: 'never',
+        success: function () {
+          var trelloToken = localStorage.getItem("trello_token");
+          localStorage.removeItem("trello_token");
+          sendToReactNative({ type: "AUTH_SUCCESS", authToken: trelloToken });
+        },
+        error: function () {
+          sendToReactNative({ type: "AUTH_FAILURE" });
+        }
+      });
+    }
+
+    var handleReceivedMessage = function (event) {
+      const data = JSON.parse(event.data);
+      if (data.type === "AUTHORIZE") {
+        authorize(data.trelloApiKey);
+      }
+    }
+    window.onload = function () {
+      sendToReactNative({ type: "WEBVIEW_LOADED" });
+    };
+
+    window.addEventListener("message", handleReceivedMessage, false);
+    document.addEventListener("message", handleReceivedMessage, false);
+  </script>
+</body>
+
+</html>
