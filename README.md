@@ -6,7 +6,7 @@
 A component that encapsulates Trello's API token-based authentication to grant third-party applications access to the Trello API.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/mmazzarolo/react-native-trello-login/master/.github/login-screenshot-iphonex.png" />
+<img src="https://raw.githubusercontent.com/mmazzarolo/react-native-trello-login/master/.github/login-screenshot-iphonex.png" height="700" />
 </p>
 
 ## Setup
