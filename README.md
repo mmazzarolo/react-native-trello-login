@@ -1,6 +1,6 @@
 # react-native-trello-login
 
-[![npm version](https://badge.fury.io/js/react-native-modal.svg)](https://badge.fury.io/js/react-native-trello-login)
+[![npm version](https://badge.fury.io/js/react-native-trello-login.svg)](https://badge.fury.io/js/react-native-trello-login)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 A component that encapsulates Trello's API token-based authentication to grant third-party applications access to the Trello API.
