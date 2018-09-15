@@ -73,8 +73,8 @@ See the `/example` folder for a complete example (login + logout).
 | --------------- | ------ | ------------ | --------------------------------------------------------------------------- |
 | applicationName | string | **REQUIRED** | The application name shown to the user in the login process                 |
 | debugEnabled    | bool   | false        | When true, shows a few useful `console.debug` logs during the login process |
-| onLoginSuccess  | func   | **REQUIRED** | Callback invoked on a successful login ( callback parameter: auth token)    |
-| onLoginSuccess  | func   | **REQUIRED** | Callback invoked on a failed login (callback parameter: error message)      |
+| onLoginFailure  | func   | **REQUIRED** | Callback invoked on a failed login (callback parameter: error message)      |
+| onLoginSuccess  | func   | **REQUIRED** | Callback invoked on a successful login (callback parameter: auth token)     |
 | trelloApiKey    | string | **REQUIRED** | The [Trello API key](https://trello.com/app-key/)                           |
 | style           | any    | null         | Style applied to the Trello login WebView                                   |
 
