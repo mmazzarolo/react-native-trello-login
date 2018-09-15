@@ -22,6 +22,7 @@ class TrelloLogin extends React.Component {
     debugEnabled: PropTypes.bool,
     onLoginFailure: PropTypes.func.isRequired,
     onLoginSuccess: PropTypes.func.isRequired,
+    style: PropTypes.any,
     trelloApiKey: PropTypes.string.isRequired
   };
 
@@ -75,16 +76,18 @@ class TrelloLogin extends React.Component {
       debugEnabled,
       onLoginFailure,
       onLoginSuccess,
+      style,
       trelloApiKey,
       ...otherProps
     } = this.props;
     return (
       <WebView
-        style={[styles.webView, ...otherProps]}
+        style={[styles.webView, style]}
         ref={ref => (this.webViewRef = ref)}
         source={trelloLoginWebsiteHtml}
         onMessage={this.handleWebViewMessage}
         javaScriptEnabled
+        {...otherProps}
       />
     );
   }
