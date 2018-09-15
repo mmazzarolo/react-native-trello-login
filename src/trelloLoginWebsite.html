@@ -40,7 +40,7 @@
     var handleReceivedMessage = function (event) {
       const data = JSON.parse(event.data);
       if (data.type === "AUTHORIZE") {
-        authorize(data.trelloApiKey);
+        authorize(data.trelloApiKey, data.applicationName);
       }
     }
     window.onload = function () {
