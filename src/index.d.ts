@@ -8,6 +8,7 @@ declare module "react-native-trello-login" {
     onLoginFailure: (message: string) => void;
     onLoginSuccess: (trelloApiToken: string) => void;
     trelloApiKey: string;
+    style: ViewStyle;
   }
 
   class TrelloLogin extends Component<TrelloLoginProps> {}

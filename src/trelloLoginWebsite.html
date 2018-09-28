@@ -8,6 +8,10 @@
 
 <body>
   <script>
+    // Sending a postMessage to react-native sometimes doesn't work.
+    // As a workaround we can invoke it using a setTimeout.
+    // For reference:
+    // https://github.com/facebook/react-native/issues/18120
     var sendToReactNative = function (data) {
       setTimeout(function () {
         window.postMessage(JSON.stringify(data), "*");
