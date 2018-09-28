@@ -1,6 +1,6 @@
 {
   "name": "react-native-trello-login",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Trello login for React-Native",
   "main": "src/index.js",
   "types": "src/index.d.ts",
