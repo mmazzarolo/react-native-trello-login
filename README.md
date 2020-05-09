@@ -1,3 +1,5 @@
+# Not actively maintained anymore
+
 # react-native-trello-login
 
 [![npm version](https://badge.fury.io/js/react-native-trello-login.svg)](https://badge.fury.io/js/react-native-trello-login)
